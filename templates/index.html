@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <p>Welcome to Home Page
+        {% comment %} {{ content }} {% endcomment %}
+    </p>
+    {% comment %} rendering the list of courses using for loop{% endcomment %}
+    <ul>
+        {% for item in clist %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% comment %} {% for item in clist%}
+        <p>{{forloop.counter}}. {{ item }}</p>
+    {% endfor %} {% endcomment %}
+
+    {% comment %} rendering the list of students using for loop{% endcomment %}
+    <ul>
+        {% for student in student_list %}
+            <li>{{ student.name }} - {{ student.age }}</li>
+        {% endfor %}
+    </ul>
+
+
+    {% comment %} using if else statment {% endcomment %}
+    {% for number in number_list %}
+        {% if number|divisibleby:2 %}
+            <p>{{ number }} is even</p>
+        {% else %}
+            <p>{{ number }} is odd</p>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
